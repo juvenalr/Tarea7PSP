@@ -6,6 +6,7 @@
 package uniandes.ecos.tarea7psp;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -20,7 +21,7 @@ public class Vista
      * @param mapaIntervalos lista de resultados
      * @return cadena de texto
      */
-     public String mostrarResultados(Map<String,String> mapaIntervalos)
+     public String mostrarResultados(LinkedHashMap<String,String> mapaIntervalos)
      {
          String encabezado = " <!DOCTYPE html> <html>";
          String cabeza = "<head> <style> table, th,td {border: 1px solid black; border-collapse: collapse;} th, td {padding: 2px;}</style> </head>";
@@ -31,7 +32,7 @@ public class Vista
          for (Map.Entry<String,String> dato : mapaIntervalos.entrySet())
          {
           
-            valores = valores + " <tr> "  + "<td>" + dato.getKey() + "</td>"  + "<td>"+ dato.getValue() + "</td>" + "<td> </tr>";
+            valores = valores + " <tr> "  + "<td>" + dato.getKey() + "</td>"  + "<td>"+ dato.getValue() + "</td>" + "</tr>";
          
          }
          
@@ -51,7 +52,7 @@ public class Vista
          String inicio= " <form> ";
          String pError= "<br>" + error + "</br>";
          String cajaValoresX="<br> Lista Valores Variable Independiente X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"datosx"+"\""+ " size= "+ "\"" +"50"+"\""+">";
-          String cajaValoresY="<br> Lista Valores Variable Dependiente X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"datosy"+"\""+ " size= "+ "\"" +"50"+"\""+">";
+          String cajaValoresY="<br> Lista Valores Variable Dependiente Y:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"datosy"+"\""+ " size= "+ "\"" +"50"+"\""+">";
          String cajaGlibertad="<br> Valor de X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"xvalor"+"\""+">";
          String boton="<button type="+"\""+"button"+ "onclick="+"\""+"alert('Hello World!')"+"\""+">Ejecutar!</button>";
          String fin = "</form>";

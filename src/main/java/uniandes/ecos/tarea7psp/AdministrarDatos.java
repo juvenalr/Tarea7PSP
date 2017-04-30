@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -111,10 +112,10 @@ public class AdministrarDatos
      * @param indY del conjunto de datos Y
      * 
      */
-	public Map<String,String> calcularVaolers(int indX, int indY,double valorx)
+	public  LinkedHashMap<String,String> calcularVaolers(int indX, int indY,double valorx)
 	{
 		
-                Map<String,String> parametros= new HashMap<String,String>();
+                LinkedHashMap<String,String> parametros= new LinkedHashMap<String,String>();
                 
                 ConjuntoDatos datosX = this.getConjunto(indX);
 		ConjuntoDatos datosY= this.getConjunto(indY);

@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Set;
 /**
  *
@@ -111,7 +112,7 @@ public class Controlador
                          {
                             return control.menus.mostrarFormularioIngreso(leido);
                          }
-                         Map<String,String> intervalos= control.adminDatos.calcularVaolers(0, 1, valorX);
+                         LinkedHashMap<String,String> intervalos= control.adminDatos.calcularVaolers(0, 1, valorX);
                          return control.menus.mostrarResultados(intervalos);
                     }
             }
