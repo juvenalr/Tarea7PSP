@@ -59,7 +59,7 @@ public class Controlador
                     {
                       if (param.equals("ruta"))
                       {
-                         if (control.adminDatos.leerArchivo(req.queryParams(param).toString()))
+                         if (control.adminDatos.leerArchivo(req.queryParams(param).toString())==true)
                          {
                           
                            nParametros+=1;
@@ -67,7 +67,7 @@ public class Controlador
                          else
                          {   nParametros=0;
 
-                             error="Error no se pudo leer el archivo de texto" + req.queryParams(param);
+                             error="Error no se pudo leer el archivo de texto: " + req.queryParams(param);
                          }
                       }
 		    	
