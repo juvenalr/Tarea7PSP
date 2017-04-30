@@ -61,12 +61,13 @@ public class Controlador
                       {
                          if (control.adminDatos.leerArchivo(req.queryParams(param)))
                          {
-                           nParametros=0;
+                          
                            nParametros+=1;
                          }
                          else
-                         {
-                             error="Error no se pudo leer el archivo de texto";
+                         {   nParametros=0;
+
+                             error="Error no se pudo leer el archivo de texto" + req.queryParams(param);
                          }
                       }
 		    	
