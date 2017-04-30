@@ -26,7 +26,9 @@ public class testAdmintrarDatos {
             
     { 
         AdministrarDatos admin  = new AdministrarDatos();
-        boolean valor= admin.leerArchivo("D:\\JUVENAL\\estudio\\Especializacion_Construccion_Software\\Conceptos_Avanzados_De_IngSoftware\\Tarea_7\\Archivo_Datos_Test1.txt");
-        assertEquals(true,valor); 
+        String datosX= "130,650,99,150,128,302,95,945,368,961";
+        String datosY= "186,699,132,272,291,331,199,1890,788,1601";
+        String valor= admin.leerArchivo(datosX,datosY);
+        assertEquals("ok",valor); 
     }
 }

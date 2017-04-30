@@ -39,65 +39,59 @@ public class AdministrarDatos
      *  @return  retorna falso si no puede abrir el archivo
      */
 	
-	public boolean leerArchivo(String path)
+	public String leerArchivo(String datosX, String datosY)
 
 	{
-		boolean leido = false;
-		ListaConjuntoDatos= new ArrayList<ConjuntoDatos>();
-		if ( path.contains(".txt"))
-		{
-                    
-			try {
-				BufferedReader br = new BufferedReader(new FileReader(path));
-				
-				try {
-                                        String line = br.readLine();
-					while (line != null) 
-					{
-                                            ConjuntoDatos nuevoConjuntoDatos= new ConjuntoDatos();
-							
-                                            String[] valores= line.split(",") ;
-                                            for (int i= 0; i<valores.length;i++) 
-                                            {
-						if (i==0)
-						{
-                                                    nuevoConjuntoDatos.setTitulo(valores[i]);
-						}				        
-						else
-						{
-                                                    try 
-                                                    {
-                                                            Double pValor= Double.parseDouble(valores[i]);
-								
-                                                            nuevoConjuntoDatos.addDato(pValor);
-                                                    }
-						    catch(NumberFormatException ex)
-                                                    {
-							System.out.println("Conjunto de Datos " +nuevoConjuntoDatos.getTitulo()+ "Valor No Cargado: " + valores[i]);								
-                                                    }
-						}						
-							
-                                            }
-                                            ListaConjuntoDatos.add(nuevoConjuntoDatos);
-                                            line = br.readLine();
-                                        }
-                                        leido= true;
-                                        br.close();
-                                    } 
-                                    catch (IOException e) 
-                                    {
-					
-                                    }
-				
-                            } 
-                            catch (FileNotFoundException e) 
-                            {
-				return false;
-                            }
-		}
 		
-		return leido;
-	}
+		ListaConjuntoDatos= new ArrayList<ConjuntoDatos>();
+		ConjuntoDatos nuevoConjuntoDatosX= new ConjuntoDatos();
+                ConjuntoDatos nuevoConjuntoDatosY= new ConjuntoDatos();
+		String[] valoresX= datosX.split(",") ;
+                String[] valoresY= datosY.split(",") ;
+                
+                if (valoresX.length != valoresY.length )
+                {
+                 return "Error Lista De Datos de Tamaños Distintos";
+                }
+                nuevoConjuntoDatosX.setTitulo("Variable Independiente X");
+                for (int i= 0; i<valoresX.length;i++) 
+                {
+                    try 
+                    {
+                        Double pValor= Double.parseDouble(valoresX[i].replace(" ", ""));
+			nuevoConjuntoDatosX.addDato(pValor);
+                    }
+                    catch(NumberFormatException ex)
+                    {
+			return "Error el valor: " +valoresX[i]+ " Del Conjunto De Datos X no es un  númerico" ;
+                    }
+												
+							
+                }
+                
+                nuevoConjuntoDatosY.setTitulo("Variable Dependiente Y");
+                for (int i= 0; i<valoresY.length;i++) 
+                {
+                    try 
+                    {
+                        Double pValor= Double.parseDouble(valoresY[i].replace(" ", ""));
+			nuevoConjuntoDatosY.addDato(pValor);
+                    }
+                    catch(NumberFormatException ex)
+                    {
+			return "Error el valor:  " +valoresY[i]+ " Del Conjunto De Datos Y no es un númerico" ;
+                    }
+												
+							
+                }
+                ListaConjuntoDatos.add(nuevoConjuntoDatosX);
+                ListaConjuntoDatos.add(nuevoConjuntoDatosY);
+                return "ok";                   
+        }                  
+                    
+		
+		
+	
 
 	/**
 	 * devuleve el un conjunto de datos de la lista

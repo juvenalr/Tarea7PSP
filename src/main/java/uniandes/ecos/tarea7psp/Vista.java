@@ -50,11 +50,12 @@ public class Vista
      {
          String inicio= " <form> ";
          String pError= "<br>" + error + "</br>";
-         String cajaPValor="<br> Ruta Archivo:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"ruta"+"\""+">";
+         String cajaValoresX="<br> Lista Valores Variable Independiente X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"datosx"+"\""+ " size= "+ "\"" +"50"+"\""+">";
+          String cajaValoresY="<br> Lista Valores Variable Dependiente X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"datosy"+"\""+ " size= "+ "\"" +"50"+"\""+">";
          String cajaGlibertad="<br> Valor de X:</br>  <input type= " + "\""+"text"+"\""+ "name=" + "\"" +"xvalor"+"\""+">";
          String boton="<button type="+"\""+"button"+ "onclick="+"\""+"alert('Hello World!')"+"\""+">Ejecutar!</button>";
          String fin = "</form>";
-        return inicio + pError + cajaPValor+ boton + cajaGlibertad + fin;      
+        return inicio + pError + cajaValoresX+ cajaValoresY+boton + cajaGlibertad + fin;      
      }
 }
 

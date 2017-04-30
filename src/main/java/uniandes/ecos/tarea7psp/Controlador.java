@@ -50,6 +50,9 @@ public class Controlador
         {
             int nParametros=0;
             double valorX=0;
+            String listadatosx="";
+            String listadatosy="";
+            String leido="";
             String error="";
             Set<String> queryParams = req.queryParams();
             if  (queryParams.size()>0)
@@ -57,20 +60,33 @@ public class Controlador
 		   
 		    for(String param : queryParams)
                     {
-                      if (param.equals("ruta"))
+                      if (param.equals("datosx"))
                       {
-                         if (control.adminDatos.leerArchivo(req.queryParams(param).toString())==true)
+                         if (req.queryParams(param).equals("")==false)
                          {
-                          
+                          listadatosx= req.queryParams(param);
                            nParametros+=1;
                          }
                          else
                          {   nParametros=0;
 
-                             error="Error no se pudo leer el archivo de texto: " + req.queryParams(param);
+                             error="Error Ingrese valores para la variable X ";
                          }
                       }
-		    	
+		    
+                        if (param.equals("datosy"))
+                      {
+                         if (req.queryParams(param).equals("")==false)
+                         {
+                          listadatosy= req.queryParams(param);
+                           nParametros+=1;
+                         }
+                         else
+                         {   nParametros=0;
+
+                             error="Error Ingrese valores para la variable X ";
+                         }
+                      }
                       if (param.equals("xvalor"))
                       {
                         try
@@ -86,8 +102,15 @@ public class Controlador
                       }
                     }
                     
-                    if (nParametros==2)
+                  
+                    if (nParametros==3)
                     {
+                        
+                        leido= control.adminDatos.leerArchivo(listadatosx,listadatosy);
+                        if(leido.equals("ok")==false)
+                         {
+                            return control.menus.mostrarFormularioIngreso(leido);
+                         }
                          Map<String,String> intervalos= control.adminDatos.calcularVaolers(0, 1, valorX);
                          return control.menus.mostrarResultados(intervalos);
                     }
