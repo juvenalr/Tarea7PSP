@@ -53,10 +53,20 @@ public class CalculoPValor
      */
     public double calcularFuncionGamma(double numerador, double denominador)
     { 
+      
       ArrayList<Double> sumafraccion;
+      
+               
       if (numerador % denominador ==0)
       {
-         sumafraccion= operarSumaFraccionesEntero(numerador/denominador,1,-1.0);
+          if ( numerador / denominador == 1)
+          {
+           sumafraccion= operarSumaFraccionesEntero(numerador/denominador,1,0);
+          }
+          else
+          {
+            sumafraccion= operarSumaFraccionesEntero(numerador/denominador,1,-1.0);
+          }
       }
       else
       {

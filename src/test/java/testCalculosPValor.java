@@ -96,7 +96,7 @@ public class testCalculosPValor {
      public void testcalcularValorP()
      {        
        CalculoPValor  cal = new CalculoPValor ();
-       
+      
        Double funcion = cal.calcularValorP(1.1812, 10, 10);
        assertEquals(0.367573746,funcion,0.0001);        
        

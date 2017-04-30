@@ -24,6 +24,7 @@ public class testCalculo {
     {
          datosX= new ConjuntoDatos();
           datosY= new ConjuntoDatos();
+
 	 datosX.addDato(Double.parseDouble("130"));
 	 datosX.addDato(Double.parseDouble("650"));
 	 datosX.addDato(Double.parseDouble("99"));
@@ -35,6 +36,7 @@ public class testCalculo {
          datosX.addDato(Double.parseDouble("368"));
          datosX.addDato(Double.parseDouble("961"));
          
+
          datosY.addDato(Double.parseDouble("186"));
 	 datosY.addDato(Double.parseDouble("699"));
 	 datosY.addDato(Double.parseDouble("132"));
