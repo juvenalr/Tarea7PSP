@@ -59,7 +59,7 @@ public class Controlador
                     {
                       if (param.equals("ruta"))
                       {
-                         if (control.adminDatos.leerArchivo(req.queryParams(param)))
+                         if (control.adminDatos.leerArchivo(req.queryParams(param).toString()))
                          {
                           
                            nParametros+=1;

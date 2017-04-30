@@ -16,7 +16,7 @@ import org.junit.runners.Suite;
  * @author usuario
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({testCalculo.class, testCalculosregresion.class, testCalculosPValor.class})
+@Suite.SuiteClasses({testCalculo.class, testCalculosregresion.class, testCalculosPValor.class, testAdmintrarDatos.class})
 public class AllTest {
 
 
