@@ -47,7 +47,7 @@ public class testCalculosregresion {
          datosY.addDato(Double.parseDouble("199"));
          datosY.addDato(Double.parseDouble("1890"));
          datosY.addDato(Double.parseDouble("788"));
-         datosY.addDato(Double.parseDouble("1601"));
+         datosY.addDato(Double.parseDouble("1601")); 
     }
     
     @Test 
